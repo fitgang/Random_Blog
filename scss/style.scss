@@ -1,0 +1,20 @@
+@import "shared";
+@import "card";
+
+#see-more {
+  margin: auto;
+  display: block;
+  margin-bottom: 20px;
+  background: var(--color2);
+  border-color: var(--color2);
+  width: 140px;
+  padding: 10px;
+}
+
+#see-more {
+  &:focus,
+  &:hover {
+    background: transparent;
+    color: var(--color2);
+  }
+}
