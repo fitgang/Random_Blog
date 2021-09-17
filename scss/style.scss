@@ -9,10 +9,7 @@
   border-color: var(--color2);
   width: 140px;
   padding: 10px;
-}
-
-#see-more {
-  &:focus,
+  &:focus-visible,
   &:hover {
     background: transparent;
     color: var(--color2);

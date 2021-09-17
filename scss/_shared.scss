@@ -25,8 +25,9 @@ footer {
   background: var(--color3);
 }
 
-.account,
-.button {
+.account-btn,
+.button,
+#filter span.selected {
   background: var(--color1);
 }
 
@@ -48,6 +49,7 @@ header {
   text-align: center;
   position: sticky;
   top: -5em;
+  z-index: 1;
   ul {
     justify-content: space-around;
     flex-wrap: wrap;
@@ -73,12 +75,12 @@ header {
 }
 
 #sna input,
-.account {
+.account-btn {
   border: 1px solid var(--color1);
 }
 
 #sna,
-.account,
+.account-btn,
 header ul,
 #wfu-form {
   display: flex;
@@ -88,16 +90,83 @@ header ul,
   height: 40px;
   max-width: 550px;
   margin: auto;
-  input {
+  position: relative;
+  input[type="text"] {
     width: calc(100% - 44px);
     padding: 0 8px;
   }
 }
 
-.account {
+#filter {
+  top: 2.5rem;
+  box-shadow: 0px 2px 4px 0px #000000b3;
+  background: #fff;
+  width: 85%;
+  padding: 5px;
+  border-radius: 6px;
+  label {
+    background: var(--color2);
+    padding: 2px 10px;
+    margin: 5px;
+    border-radius: 30px;
+    display: inline-block;
+  }
+  input[type="radio"] {
+    appearance: none;
+    border: 0;
+    &:checked + label {
+      background: var(--color1);
+    }
+    &:focus-visible + label {
+      outline: 2px solid #000;
+      outline-offset: 2px;
+    }
+  }
+}
+
+.account-btn {
   width: 40px;
   align-items: center;
   justify-content: center;
+  color: inherit;
+}
+
+.account,
+.overlay-bg,
+#filter {
+  position: absolute;
+}
+
+.account {
+  right: 0;
+  top: 42px;
+  text-align: left;
+  font-weight: 600;
+  color: #000;
+  background: #ffffff96;
+  backdrop-filter: blur(20px);
+  border-radius: 10px;
+  & > a {
+    display: block;
+    border-top: 1px solid;
+    padding: 5px 10px;
+  }
+}
+
+#user {
+  margin-bottom: 10px;
+}
+
+#user-image {
+  margin-right: 6em;
+}
+
+#user-name {
+  white-space: nowrap;
+}
+
+#close-account-btn {
+  width: 100%;
 }
 
 svg {
@@ -109,10 +178,17 @@ ul {
   list-style-type: none;
 }
 
-.account,
-.button {
+.account-btn,
+.button,
+#filter label {
   &:hover {
     cursor: pointer;
+  }
+}
+
+.account-btn {
+  &:hover {
+    transform: scale(1.1);
   }
 }
 
@@ -129,7 +205,10 @@ nav {
 }
 
 .button {
-  &:focus,
+  line-height: 1.5;
+  border: 2px solid var(--color1);
+  width: 100px;
+  &:focus-visible,
   &:hover {
     background: transparent;
     color: var(--color1);
@@ -164,12 +243,6 @@ footer {
   padding: 5px;
 }
 
-.button {
-  line-height: 1.5;
-  border: 2px solid var(--color1);
-  width: 100px;
-}
-
 #contact {
   #logo {
     margin: 15px 0;
@@ -179,6 +252,24 @@ footer {
     vertical-align: middle;
     margin: 3px auto;
   }
+}
+
+.author-image {
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+  border-radius: 100%;
+  margin-right: 10px;
+}
+
+.overlay-bg {
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+.none {
+  display: none;
 }
 
 @media screen and (min-width: 650px) {
@@ -201,6 +292,17 @@ footer {
     margin-top: 12px;
   }
 
+  .account {
+    font-size: 1.1rem;
+    & > div {
+      padding: 8px 15px;
+    }
+  }
+
+  #user-image {
+    margin-right: 8em;
+  }
+
   footer {
     display: flex;
     justify-content: space-around;
@@ -209,6 +311,11 @@ footer {
 
   #sitemap {
     margin: 0;
+  }
+
+  .author-image {
+    width: 45px;
+    height: 45px;
   }
 }
 
