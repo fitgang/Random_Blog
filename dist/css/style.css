@@ -57,12 +57,12 @@ header ul {
   flex-wrap: wrap;
 }
 
-#logo,
+.logo,
 #brand-name {
   vertical-align: middle;
 }
 
-#logo {
+.logo {
   width: 60px;
   margin-right: 10px;
 }
@@ -162,6 +162,7 @@ header ul,
 
 #user {
   margin-bottom: 10px;
+  padding: 8px 15px;
 }
 
 #user-image {
@@ -179,6 +180,7 @@ header ul,
 svg {
   width: 25px;
   height: 25px;
+  vertical-align: middle;
 }
 
 ul {
@@ -186,7 +188,7 @@ ul {
 }
 
 .account-btn:hover,
-.button:hover,
+button:hover,
 #filter label:hover {
   cursor: pointer;
 }
@@ -246,7 +248,7 @@ footer > div {
   padding: 5px;
 }
 
-#contact #logo {
+#contact .logo {
   margin: 15px 0;
 }
 
@@ -283,7 +285,7 @@ footer > div {
     width: 50%;
     max-width: 470px;
   }
-  #logo {
+  .logo {
     margin-left: 10px;
   }
   #sna {
@@ -291,9 +293,6 @@ footer > div {
   }
   .account {
     font-size: 1.1rem;
-  }
-  .account > div {
-    padding: 8px 15px;
   }
   #user-image {
     margin-right: 8em;

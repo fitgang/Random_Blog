@@ -1,8 +1,7 @@
-import { Article, createArticleList } from "./articles.js";
+import { Article, createArticleList } from "./objects.js";
 
 // DOM elemnets
 const seeMoreBtn = document.getElementById("see-more"),
-  accBtn = document.getElementsByClassName("account-btn")[0],
   searchForm = document.getElementById("sna"),
   searchBar = searchForm.querySelector("input"),
   filterChoices = searchForm.querySelectorAll("label");
@@ -41,6 +40,7 @@ let articles = createArticleList([]);
   // renders an array of articles passed as an argument in HTML
   const arr = articles.list.slice(0, 10);
   displayCards(arr);
+  localStorage.setItem("allArticles", JSON.stringify(arr));
 
   function getRandomDate() {
     // day
@@ -104,20 +104,6 @@ function openArticle(e) {
   window.open("article.html");
 }
 
-// displays the account modal
-function showAccount() {
-  const acc = document.querySelector(".account");
-  acc.classList.remove("none");
-  const close = acc.querySelector("#close-account-btn");
-  close.addEventListener("click", hideAccount);
-
-  // hides the account modal
-  function hideAccount() {
-    this.parentElement.classList.add("none");
-    this.removeEventListener("click", hideAccount);
-  }
-}
-
 // sets the filter
 function setFilterAndSearch(e) {
   searchBy = e.target.innerText.toLowerCase();
@@ -137,7 +123,7 @@ function searchQuery(e) {
 
   // hides the filter
   const filter = document.getElementById("filter");
-  filter.classList.add("none");
+  setTimeout(() => filter.classList.add("none"), 1000);
 
   // makes the search
   let text = searchBar.value.trim();
@@ -177,6 +163,9 @@ function getMatchingArticles(query, filter) {
   return arr;
 }
 
+// update any stats for the current article
+function updateStats() {}
+
 // EVENT LISTENERS
 ["click", "touchstart"].forEach((e) => {
   seeMoreBtn.addEventListener(e, () => {
@@ -184,15 +173,11 @@ function getMatchingArticles(query, filter) {
       arr = articles.list.slice(n, n + 10);
     displayCards(arr);
   });
-  accBtn.addEventListener(e, showAccount);
   filterChoices.forEach((c) => {
     c.addEventListener(e, setFilterAndSearch);
   });
 });
 
-accBtn.addEventListener("keypress", (e) => {
-  if (e.key === "Enter") showAccount;
-});
-
 searchBar.addEventListener("input", toggleFilter);
 searchForm.addEventListener("submit", searchQuery);
+window.addEventListener("close", updateStats);
