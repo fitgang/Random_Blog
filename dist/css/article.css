@@ -3,9 +3,7 @@
   --color2: #2a9d8f;
   --color3: #264653;
   --color4: #fff;
-  --sans-serif-family: system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --sans-serif-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 * {
@@ -255,6 +253,11 @@ footer > div {
 #contact > div * {
   vertical-align: middle;
   margin: 3px auto;
+}
+
+.author {
+  display: flex;
+  align-items: center;
 }
 
 .author-image {
@@ -530,10 +533,6 @@ h2 {
   color: var(--color3);
 }
 
-#comments-section {
-  padding-bottom: 25px;
-}
-
 .show-comment-section {
   animation: show-section 1s ease forwards;
 }
@@ -587,14 +586,14 @@ h2 {
 .comment-form button {
   border-radius: 100px;
   padding: 3px;
-  color: var(--color1);
-  background: transparent;
-  border: 3px solid;
+  color: var(--color3);
+  background: var(--color4);
+  border: 3px solid var(--color4);
   margin-left: 4px;
 }
 
 .comment {
-  padding: 2px;
+  padding: 1em 0;
 }
 
 .comment time {
@@ -604,15 +603,23 @@ h2 {
 }
 
 .comment:not(.comment:last-child) {
-  margin-bottom: 25px;
+  border-bottom: 1px solid;
 }
 
 .comment-author {
   margin: 5px auto;
 }
 
+.comment-author-image {
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+  border-radius: 100%;
+  margin-right: 10px;
+}
+
 .comment-body {
-  margin-bottom: 5px;
+  margin: 0.5em 0 1em 0;
 }
 
 .reply-btn {
@@ -658,7 +665,8 @@ h2 {
     padding: 0 20px;
   }
   #date,
-  .author {
+  .author,
+  .comment-body {
     font-size: 1.1em;
   }
   #body {
@@ -666,6 +674,11 @@ h2 {
   }
   .comment-form textarea {
     font-size: 1.1em;
+    height: 50px;
+    min-height: 50px;
+  }
+  .comment-form button {
+    padding: 9px;
   }
 }
 /*# sourceMappingURL=article.css.map */

@@ -3,9 +3,7 @@
   --color2: #2a9d8f;
   --color3: #264653;
   --color4: #fff;
-  --sans-serif-family: system-ui, -apple-system, "Segoe UI", Roboto,
-    "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --sans-serif-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 * {
@@ -255,6 +253,11 @@ footer > div {
 #contact > div * {
   vertical-align: middle;
   margin: 3px auto;
+}
+
+.author {
+  display: flex;
+  align-items: center;
 }
 
 .author-image {

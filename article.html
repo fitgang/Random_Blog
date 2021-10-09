@@ -25,15 +25,20 @@
                         d="m9.77 12.11 4.012-2.953a.647.647 0 0 0 0-1.114L9.771 5.09a.644.644 0 0 0-.971.557V6.65H2v3.9h6.8v1.003c0 .505.545.808.97.557z" />
                 </svg>
             </button>
+            <button type="button" class="cancel-reply-btn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                    class="bi bi-x-circle-fill" viewBox="0 0 16 16">
+                    <path
+                        d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z" />
+                </svg>
+            </button>
         </form>
         <div class="comment">
             <div class="author comment-author">
-                <img src="images/writing.jpg" alt="" class="author-image">
-                <span>author</span>
+                <img src="images/writing.jpg" alt="" class="comment-author-image">
+                <span class="comment-author-name">author</span>
             </div>
-            <div class="comment-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi voluptate
-                consequatur molestiae accusamus, delectus a laborum nulla. Iure minima aperiam, repudiandae ullam
-                voluptatum quas non, consequuntur similique recusandae ipsam itaque.</div>
+            <div class="comment-body">body</div>
             <button type="button" class="reply-btn"><img src="images/reply.svg" alt=""></button>
             <time>11/11/11</time>
         </div>
@@ -80,18 +85,10 @@
             <img src="images/writing.jpg" alt="" class="author-image" id="author-image">
             <span id="author-name">author-name</span>
         </div>
-        <p id="body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet illum veniam velit officiis, quod ut
-            sapiente
-            ipsum non accusantium assumenda perferendis neque at a consectetur dolor, eos ratione repellendus ea. Lorem
-            ipsum dolor, sit amet consectetur adipisicing elit. Culpa optio exercitationem, id distinctio vel tenetur
-            dolorum laboriosam temporibus necessitatibus autem rem dolores magnam? Incidunt earum nihil doloremque
-            quibusdam dignissimos ipsum.
-            Pariatur aspernatur earum nam rerum, minima odit possimus amet magnam esse. Aspernatur, illo nemo autem
-            ullam porro sint accusamus dolorum, inventore sit unde praesentium nulla asperiores labore! Maiores, laborum
-            ipsam.
-            Animi vero dolorum minus eligendi numquam, iste aliquid, laboriosam unde quo quas omnis consequatur dicta,
-            doloremque similique! In nobis, pariatur architecto eligendi doloremque labore vel ipsum cupiditate
-            consequatur. Ex, incidunt.</p>
+        <p id="body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Amet illum veniam velit officiis, quod ut sapiente ipsum non accusantium assumenda perferendis neque at a consectetur dolor, eos ratione repellendus ea. Lorem ipsum dolor, sit amet consectetur
+            adipisicing elit. Culpa optio exercitationem, id distinctio vel tenetur dolorum laboriosam temporibus necessitatibus autem rem dolores magnam? Incidunt earum nihil doloremque quibusdam dignissimos ipsum. Pariatur aspernatur earum nam rerum,
+            minima odit possimus amet magnam esse. Aspernatur, illo nemo autem ullam porro sint accusamus dolorum, inventore sit unde praesentium nulla asperiores labore! Maiores, laborum ipsam. Animi vero dolorum minus eligendi numquam, iste aliquid,
+            laboriosam unde quo quas omnis consequatur dicta, doloremque similique! In nobis, pariatur architecto eligendi doloremque labore vel ipsum cupiditate consequatur. Ex, incidunt.</p>
         <div id="reactions">
             <button type="button" id="like-btn">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
@@ -138,8 +135,8 @@
                 <div>
                     <h4>Report</h4>
                     <form id="report-form">
-                        <label for="form-title">Title</label><input type="text" id="form-title">
-                        <label for="form-description">Description</label><textarea id="form-description"></textarea>
+                        <label for="report-form-title">Title</label><input type="text" id="report-form-title">
+                        <label for="report-form-description">Description</label><textarea id="report-form-description"></textarea>
                         <button type="submit" class="button" id="submit-report-form-btn">Submit</button>
                         <button type="button" class="button" id="close-dialog-btn">Close</button>
                     </form>
@@ -162,28 +159,24 @@
                     </svg>
                 </button>
             </form>
-            <div class="comment" id="comment-1">
+            <!-- <div class="comment" id="comment-1">
                 <div class="author comment-author">
-                    <img src="images/writing.jpg" alt="" class="author-image">
+                    <img src="images/writing.jpg" alt="" class="comment-author-image">
                     <span>author</span>
                 </div>
-                <div class="comment-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi voluptate
-                    consequatur molestiae accusamus, delectus a laborum nulla. Iure minima aperiam, repudiandae ullam
-                    voluptatum quas non, consequuntur similique recusandae ipsam itaque.</div>
+                <div class="comment-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi voluptate consequatur molestiae accusamus, delectus a laborum nulla. Iure minima aperiam, repudiandae ullam voluptatum quas non, consequuntur similique recusandae ipsam itaque.</div>
                 <button type="button" class="reply-btn"><img src="images/reply.svg" alt=""></button>
                 <time>11/11/11</time>
             </div>
             <div class="comment" id="comment-2">
                 <div class="author comment-author">
-                    <img src="images/writing.jpg" alt="" class="author-image">
+                    <img src="images/writing.jpg" alt="" class="comment-author-image">
                     <span>author</span>
                 </div>
-                <div class="comment-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi voluptate
-                    consequatur molestiae accusamus, delectus a laborum nulla. Iure minima aperiam, repudiandae ullam
-                    voluptatum quas non, consequuntur similique recusandae ipsam itaque.</div>
+                <div class="comment-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi voluptate consequatur molestiae accusamus, delectus a laborum nulla. Iure minima aperiam, repudiandae ullam voluptatum quas non, consequuntur similique recusandae ipsam itaque.</div>
                 <button type="button" class="reply-btn"><img src="images/reply.svg" alt=""></button>
                 <time>11/11/11</time>
-            </div>
+            </div> -->
         </div>
     </main>
     <footer>
@@ -211,15 +204,13 @@
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                     <path fill-rule="evenodd"
                         d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
-                </svg>
-                1234567890
+                </svg> 1234567890
             </div>
             <div>
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                     <path
                         d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z" />
-                </svg>
-                xyz@email.com
+                </svg> xyz@email.com
             </div>
         </div>
     </footer>
