@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="dist/css/style.css" />
+    <title>Random blog</title>
+</head>
+
+<body>
+    <template>
+        <article class="card">
+            <h2 class="card-title"><a href="#">TITLE</a></h2>
+            <p class="card-body">BODY</p>
+            <div class="author"><img src="" alt="" class="author-image"><span></span></div>
+            <div class="card-date">DATE</div>
+        </article>
+    </template>
+    <header>
+        <img src="images/logo.png" alt="random blog" class="logo" />
+        <h1 id="brand-name">random blog</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="https://fitgang.github.io/my-portfolio/">Developer</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+        </nav>
+        <form id="sna">
+            <input type="text" placeholder="Search..." />
+            <div id="filter" class="none">
+                <input type="radio" name="filter" id="r-all" checked><label for="r-all">All</label>
+                <input type="radio" name="filter" id="r-author"><label for="r-author">Author</label>
+                <input type="radio" name="filter" id="r-title"><label for="r-title">Title</label>
+            </div>
+            <button type="button" class="account-btn" aria-label="account info">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+                </svg>
+            </button>
+            <div class="account none">
+                <div id="user">
+                    <img src="images/writing.jpg" alt="" id="user-image" class="author-image">
+                    <span id="user-name">Ayush Gupta</span>
+                </div>
+                <a href="">Liked Articles</a>
+                <a href="">Settings</a>
+                <a href="">Log Out</a>
+                <button type="button" class="button" id="close-account-btn">Close</button>
+            </div>
+        </form>
+    </header>
+    <div id="article-cards">
+        <!-- <article class="card">
+            <h2 class="card-title"><a href="#">Lorem ipsum dolor, sit amet
+                    consectetur...</a></h2>
+            <p class="card-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea temporibus cumque
+                inventore est iusto in nemo nobis odit nulla nostrum, non voluptas tenetur suscipit facilis soluta
+                sit voluptatem saepe vitae?</p>
+            <div class="author"><img src="images/writing.jpg" alt="" class="author-image">author-name</div>
+            <div class="card-date">11/11/11</div>
+        </article> -->
+    </div>
+    <button type="button" class="button" id="see-more">See More</button>
+    <footer>
+        <div id="wfu">
+            <h2>Write For Us</h2>
+            <form action="#" id="wfu-form">
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+                <button type="submit" class="button">Submit</button>
+            </form>
+        </div>
+        <div id="sitemap">
+            <h2>Sitemap</h2>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="https://fitgang.github.io/my-portfolio/">Developer</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div id="contact">
+            <img src="images/logo.png" alt="random blog" class="logo" />
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                </svg> 1234567890
+            </div>
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                    <path
+                        d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z" />
+                </svg> xyz@email.com
+            </div>
+        </div>
+    </footer>
+    <div class="overlay-bg none"></div>
+    <script src="js/script.js" type="module"></script>
+    <script src="js/shared.js"></script>
+</body>
+
+</html>

@@ -1,12 +1,14 @@
 {
-  "name": "random-blog",
-  "version": "1.0.0",
-  "description": "a website which shows random articles",
-  "main": "main.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
-  },
-  "author": "ayush gupta",
-  "license": "ISC"
+    "name": "random-blog",
+    "version": "1.0.0",
+    "description": "a website which shows random articles",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "ayush gupta",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.1"
+    }
 }
