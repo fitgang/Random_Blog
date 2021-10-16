@@ -4,6 +4,7 @@
     "description": "a website which shows random articles",
     "main": "server.js",
     "scripts": {
+        "start": "node server.js",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "author": "ayush gupta",
