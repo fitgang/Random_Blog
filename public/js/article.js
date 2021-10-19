@@ -67,6 +67,8 @@
     name.innerText = authorName;
     body.innerHTML += data;
 
+    removePreloader();
+
     // setting sharing links
     const options = document.getElementById("share-options"),
         fb = options.querySelector("#share-to-facebook"),
@@ -154,7 +156,6 @@ function getInput(form) {
     return comment;
 }
 
-// comments on the article
 function commentOnArticle(e) {
     e.preventDefault();
     const form = e.target;
@@ -252,7 +253,6 @@ function toggleSharingOptions() {
     options.classList.toggle("none");
 }
 
-// opens the report dialog
 function openReportDialog() {
     const dialog = document.getElementById("report-dialog"),
         form = dialog.querySelector("form"),
@@ -303,4 +303,4 @@ likeBtn.addEventListener("click", toggleLike);
 commentSectionBtn.addEventListener("click", toggleCommentSection);
 shareBtn.addEventListener("click", toggleSharingOptions);
 reportBtn.addEventListener("click", openReportDialog);
-window.addEventListener("close", updateStats);
+document.addEventListener("close", updateStats);

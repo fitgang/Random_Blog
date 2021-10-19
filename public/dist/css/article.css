@@ -335,7 +335,7 @@ footer>div {
     }
 }
 
-:root {
+root {
     --like-icon-color: red;
     --comment-icon-color: var(--color2);
 }

@@ -34,6 +34,14 @@ function getRandomDate() {
     return `${day}/${month}/${year}`;
 }
 
+function removePreloader() {
+    setTimeout(() => {
+        const loader = document.querySelector(".preloader");
+        setTimeout(() => loader.remove(), 1000);
+        loader.classList.add("loaded");
+    }, 1000)
+}
+
 // EVENT listeners
 ["click", "touchstart"].forEach((e) => {
     accBtn.addEventListener(e, showAccount);

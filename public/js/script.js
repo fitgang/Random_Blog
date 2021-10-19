@@ -42,6 +42,8 @@ let articles = createArticleList([]);
     displayCards(arr);
     localStorage.setItem("allArticles", JSON.stringify(arr));
 
+    removePreloader();
+
     function getRandomAuthor(arr) {
         // max = arr.length, min = 0
         const i = Math.floor(Math.random() * (arr.length - 0 + 1) + 0),

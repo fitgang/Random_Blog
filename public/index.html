@@ -7,6 +7,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="dist/css/style.css" />
     <title>Random blog</title>
+    <style>
+        body {
+            overflow-y: scroll;
+        }
+        
+        .preloader {
+            height: 100vh;
+            width: 100%;
+            background: var(--color3);
+            text-align: center;
+            padding-top: 40vh;
+            position: absolute;
+            top: 0;
+            z-index: 1;
+        }
+        
+        .preloader img {
+            animation: loading 1.5s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate-reverse;
+        }
+        
+        @-webkit-keyframes loading {
+            100% {
+                opacity: 0;
+                transform: scale(0) rotateZ(-360deg);
+            }
+            0% {
+                opacity: 1;
+                transform: scale(1.5) rotateZ(360deg);
+            }
+        }
+        
+        @keyframes loading {
+            100% {
+                opacity: 0;
+                transform: scale(0) rotateZ(-360deg);
+            }
+            0% {
+                opacity: 1;
+                transform: scale(1.5) rotateZ(360deg);
+            }
+        }
+        
+        .loaded {
+            opacity: 0;
+            transition: opacity 1s;
+        }
+    </style>
 </head>
 
 <body>
@@ -100,9 +147,11 @@
             </div>
         </div>
     </footer>
-    <div class="overlay-bg none"></div>
-    <script src="js/script.js" type="module"></script>
+    <div class="preloader">
+        <img src="images/logo.png" alt="random blog" class="logo" />
+    </div>
     <script src="js/shared.js"></script>
+    <script src="js/script.js" type="module"></script>
 </body>
 
 </html>
