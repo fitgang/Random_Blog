@@ -1,12 +1,12 @@
-// google authentication login, facebook login, linked login and others
-// use different social media apis to generate sharing links
+// add open graph tags
+// clicking on empty space closes different dialogs and mockups
 // when the window closes change the stats of the article in the 'allArticles' array in localstorage
 // if there is no obj in session storege display an error message
-// add open graph tags
 // add comments and replies to backend
-// clicking on empty space closes different dialogs and mockups
+// search functionality in article.html
 
 // form validation and clear the form store the data to sessions storage
+// check for social sharing links after deploying on heroku
 
 // populate the article and set sharing links
 (function() {
@@ -72,11 +72,12 @@
     // setting sharing links
     const options = document.getElementById("share-options"),
         fb = options.querySelector("#share-to-facebook"),
-        lin = options.querySelector("#share-to-linkedIn"),
-        tweet = options.querySelector("#share-to-twitter");
-    fb.href =
-        "https://www.facebook.com/sharer/sharer.php?u=" +
-        encodeURI(window.location);
+        wa = options.querySelector("#share-to-whatsapp"),
+        tweet = options.querySelector("#share-to-twitter"),
+        link = window.location;
+    fb.href = encodeURI(`https://www.facebook.com/sharer/sharer.php?u=${link}`);
+    wa.href = encodeURI(`https://api.whatsapp.com/send?text=${link}`);
+    tweet.href = encodeURI(`https://twitter.com/intent/tweet?text=Hey! Check out this article here&url=${link}`);
 })();
 
 // DOM elements
