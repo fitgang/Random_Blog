@@ -22,9 +22,7 @@ let articles = createArticleList([]);
         list = await r1.json();
 
     // gets 10 different identities to be used as 'authors'
-    let r2 = await fetch(
-            "https://randomuser.me/api/?results=10&inc=name,dob,picture&noinfo"
-        ),
+    let r2 = await fetch("https://randomuser.me/api/?results=10&inc=name,dob,picture&noinfo"),
         d = await r2.json(),
         authors = d.results;
 
@@ -50,6 +48,16 @@ let articles = createArticleList([]);
             r = arr[i];
         return r ? r : getRandomAuthor(arr);
     }
+})();
+
+// collects data and sets OGP
+(function() {
+    const title = document.querySelector("h1").innerText.toUpperCase(),
+        des = 'dummy website which generates random articles',
+        type = 'website',
+        url = location,
+        image = location.origin + '/images/logo.png';
+    setOGP(title, des, type, url, image);
 })();
 
 // renders article cards
@@ -155,6 +163,5 @@ function getMatchingArticles(query, filter) {
         c.addEventListener(e, setFilterAndSearch);
     });
 });
-
 searchBar.addEventListener("input", toggleFilter);
 searchForm.addEventListener("submit", searchQuery);
