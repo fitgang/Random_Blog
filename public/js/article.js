@@ -1,13 +1,3 @@
-// add open graph tags
-// clicking on empty space closes different dialogs and mockups
-// when the window closes change the stats of the article in the 'allArticles' array in localstorage
-// if there is no obj in session storege display an error message
-// add comments and replies to backend
-// search functionality in article.html
-
-// form validation and clear the form store the data to sessions storage
-// check for social sharing links after deploying on heroku
-
 // populate the article, set sharing links, set ogp
 (function() {
     // article data
@@ -257,9 +247,12 @@ function generateReplyUI() {
 }
 
 // shows sharing options
-function toggleSharingOptions() {
+function toggleSharingOptions(show) {
     const options = document.getElementById("share-options");
-    options.classList.toggle("none");
+    if (show) {
+        options.classList.toggle("none");
+        console.log("clicked");
+    } else setTimeout(() => options.classList.add("none"), 500);
 }
 
 function openReportDialog() {
@@ -310,6 +303,7 @@ function updateStats() {}
 // EVENT listeners
 likeBtn.addEventListener("click", toggleLike);
 commentSectionBtn.addEventListener("click", toggleCommentSection);
-shareBtn.addEventListener("click", toggleSharingOptions);
+shareBtn.addEventListener("click", () => toggleSharingOptions(true));
+shareBtn.addEventListener("blur", () => toggleSharingOptions(false));
 reportBtn.addEventListener("click", openReportDialog);
 document.addEventListener("close", updateStats);
