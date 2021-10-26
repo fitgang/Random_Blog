@@ -3,8 +3,8 @@
     // article data
     const j = sessionStorage.getItem("article");
     if (!j) {
-        // error message on the screen
-        alert("Oops,\nPlease go back to the home page and try again.")
+        alert("Oops! Sorry to distrub,\nbut you might head to the home page and try again.\nDon't worry I will do that for you");
+        location = location.origin + "/public/index.html";
         return;
     }
 
@@ -124,9 +124,11 @@ function toggleCommentSection() {
     }
 
     async function fetchCommentsAndDisplay() {
-        const id = 1 /* JSON.parse(sessionStorage.getItem("article")).id */ ,
+        const id = JSON.parse(sessionStorage.getItem("article")).id,
             r = await fetch(`https://jsonplaceholder.typicode.com/comments?postId=${id}`),
             d = await r.json();
+        let article = JSON.parse(sessionStorage.getItem("article"));
+        article.comments = {};
         d.forEach(o => {
             const comObj = {
                 id: o.id,
@@ -139,7 +141,9 @@ function toggleCommentSection() {
             };
             const child = createComment(comObj);
             comSec.appendChild(child);
-        })
+            article.comments[o.id] = comObj;
+        });
+        sessionStorage.setItem("article", JSON.stringify(article))
     }
 }
 
@@ -203,6 +207,9 @@ function getInputAndDisplayComment(form, comId, adjElem, replyTo) {
             },
             comElem = createComment(comObj, replyTo);
         adjElem.insertAdjacentElement("afterend", comElem);
+        let article = JSON.parse(sessionStorage.getItem("article"));
+        article.comments[comId] = comObj;
+        sessionStorage.setItem("article", JSON.stringify(article));
     }
 }
 
@@ -252,7 +259,7 @@ function toggleSharingOptions(show) {
     if (show) {
         options.classList.toggle("none");
         console.log("clicked");
-    } else setTimeout(() => options.classList.add("none"), 500);
+    } else setTimeout(() => options.classList.add("none"), 500); // above not good for acessibility 
 }
 
 function openReportDialog() {
@@ -297,13 +304,9 @@ function openReportDialog() {
     }
 }
 
-// update any stats for the current article
-function updateStats() {}
-
 // EVENT listeners
 likeBtn.addEventListener("click", toggleLike);
 commentSectionBtn.addEventListener("click", toggleCommentSection);
 shareBtn.addEventListener("click", () => toggleSharingOptions(true));
 shareBtn.addEventListener("blur", () => toggleSharingOptions(false));
 reportBtn.addEventListener("click", openReportDialog);
-document.addEventListener("close", updateStats);
