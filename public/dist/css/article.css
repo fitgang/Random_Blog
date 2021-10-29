@@ -668,6 +668,10 @@ h2 {
     border-radius: 50px;
 }
 
+.mark {
+    background: var(--color2);
+}
+
 @media screen and (min-width: 650px) {
     body {
         background: linear-gradient(var(--color2), var(--color4), var(--color1));
