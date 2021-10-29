@@ -19,7 +19,8 @@ a {
 }
 
 header,
-footer {
+footer,
+#preloader {
     background: var(--color3);
 }
 
@@ -31,13 +32,15 @@ footer {
 
 header,
 footer,
-.button {
+.button,
+#preloader {
     color: var(--color4);
 }
 
 header input,
 nav a,
-footer {
+footer,
+#preloader {
     font-size: 1.1rem;
 }
 
