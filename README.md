@@ -1,2 +1,9 @@
 # Random_Blog
-A website which shows random articles
+## What is this project?
+A dummy blog website which shows different articles.
+
+## Features
+
+## The Making
+#### Tech Stack
+
