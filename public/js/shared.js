@@ -55,9 +55,7 @@ function setOGP(title, description, type, url, image) {
 }
 
 // EVENT listeners
-["click", "touchstart"].forEach((e) => {
-    accBtn.addEventListener(e, showAccount);
-});
+accBtn.addEventListener("click", showAccount);
 accBtn.addEventListener("keypress", (e) => {
-    if (e.key === "Enter") showAccount;
+    if (e.key === "Enter") showAccount
 });

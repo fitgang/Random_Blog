@@ -3,19 +3,18 @@ import { Article, createArticleList } from "./objects.js";
 // DOM elemnets
 const seeMoreBtn = document.getElementById("see-more"),
     searchForm = document.getElementById("sna"),
-    searchBar = searchForm.querySelector("input"),
+    searchBar = searchForm.querySelector("input[type='text']"),
     filterChoices = searchForm.querySelectorAll("label");
 
 // global stats
-
 // value to be used as a filter to search a query
-// assuming the first radio button is always checked by default
+// the first radio button is checked by default
 let searchBy = filterChoices[0].innerText.toLowerCase();
 
 // an array which will contain all the articles and random users respectively.
 let articles = createArticleList([]);
 
-// fetches fake articles from JSONPLACEHOLDER, adds info and then adds them to 'articleList' and renders 10 articles to the DOM
+// fetch fake articles from JSONPLACEHOLDER, add info and then add them to 'articleList' and render 10 articles to the DOM
 (async function() {
     // gets the articles as 'list' with body and title only
     let r1 = await fetch("https://jsonplaceholder.typicode.com/posts"),
@@ -50,7 +49,7 @@ let articles = createArticleList([]);
     }
 })();
 
-// collects data and sets OGP
+// collect data and sets OGP
 (function() {
     const title = document.querySelector("h1").innerText.toUpperCase(),
         des = 'dummy website which generates random articles',
@@ -93,11 +92,10 @@ function openArticle(e) {
     window.open("article.html");
 }
 
-// sets the filter
 function setFilterAndSearch(e) {
     searchBy = e.target.innerText.toLowerCase();
 
-    // manually triggers the submit event
+    // manually trigger the submit event
     searchForm.dispatchEvent(new SubmitEvent("submit"));
 }
 
@@ -129,7 +127,7 @@ function searchQuery(e) {
     displayCards(arr);
 }
 
-// returns an array of articles
+// return an array of articles
 function getMatchingArticles(query, filter) {
     let list = articles.list,
         arr = [];
@@ -153,15 +151,13 @@ function getMatchingArticles(query, filter) {
 }
 
 // EVENT LISTENERS
-["click", "touchstart"].forEach((e) => {
-    seeMoreBtn.addEventListener(e, () => {
-        const n = document.getElementsByClassName("card").length,
-            arr = articles.list.slice(n, n + 10);
-        displayCards(arr);
-    });
-    filterChoices.forEach((c) => {
-        c.addEventListener(e, setFilterAndSearch);
-    });
+seeMoreBtn.addEventListener("click", () => {
+    const n = document.getElementsByClassName("card").length,
+        arr = articles.list.slice(n, n + 10);
+    displayCards(arr);
+});
+filterChoices.forEach((c) => {
+    c.addEventListener("click", setFilterAndSearch);
 });
 searchBar.addEventListener("input", toggleFilter);
 searchForm.addEventListener("submit", searchQuery);

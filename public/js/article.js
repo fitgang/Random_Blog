@@ -259,20 +259,23 @@ function openReportDialog() {
             titleText = title.value.trim(),
             descriptionText = description.value.trim();
 
-        // the data will be validated
-        // the following obj will be posted to some backend
-        /* report = {
-            id : article's unique id,
-            title : titleText,
-            body : descriptionText,
-            date : the date of complain
-            user : the user who complained
-        } */
+        if (titleText && descriptionText) {
 
-        // clears the form inputs
-        [title, description].forEach(i => i.value = '');
+            // validate the data if required
+            // the following obj will be posted to some backend
+            /* report = {
+                id : article's unique id,
+                title : titleText,
+                body : descriptionText,
+                date : the date of complain
+                user : the user who complained
+            } */
 
-        closeReportDialog();
+            // clears the form inputs
+            [title, description].forEach(i => i.value = '');
+
+            closeReportDialog();
+        }
     }
 }
 
