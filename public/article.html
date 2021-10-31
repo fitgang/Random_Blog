@@ -69,13 +69,13 @@
 <body>
     <template>
         <form class="comment-form reply-form">
-            <label for="comment-1-input">
+            <label for="comment-1-input" aria-label="comment here">
                 <svg>
                     <use href="#comment-svg" width="20px" height="20px"></use>
                 </svg>
             </label>
             <textarea id="comment-1-input"></textarea>
-            <button>
+            <button aria-label="comment">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                     class="bi bi-forward-fill" viewBox="0 0 16 16">
                     <path
@@ -96,23 +96,24 @@
                 <span class="comment-author-name">author</span>
             </div>
             <div class="comment-body">body</div>
-            <button type="button" class="reply-btn"><img src="images/reply.svg" alt=""></button>
+            <button type="button" class="reply-btn" aria-label="reply"><img src="images/reply.svg" alt=""></button>
             <time>11/11/11</time>
         </div>
     </template>
     <header>
-        <img src="images/logo.png" alt="random blog" class="logo" />
+        <img src="images/logo.png" alt="" class="logo" />
         <h1 id="brand-name">random blog</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><a href="#">About</a></li>
+                <li><a href="https://github.com/fitgang/random_blog">About</a></li>
                 <li><a href="https://fitgang.github.io/my-portfolio/">Developer</a></li>
                 <li><a href="#contact">Contact Us</a></li>
             </ul>
         </nav>
         <form id="sna">
-            <input type="text" placeholder="Search..." />
+            <label for="searchbar" aria-label="search here"></label>
+            <input type="text" placeholder="Search..." id="searchbar" />
             <div id="filter" class="none">
                 <input type="radio" name="filter" id="r-all" checked><label for="r-all">All</label>
                 <input type="radio" name="filter" id="r-author"><label for="r-author">Author</label>
@@ -144,7 +145,7 @@
         </div>
         <section id="body"></section>
         <div id="reactions">
-            <button type="button" id="like-btn">
+            <button type="button" id="like-btn" aria-label="like">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                     <path
                         d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z" />
@@ -155,7 +156,7 @@
                         d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
                 </svg>
             </button>
-            <button type="button" id="comment-btn">
+            <button type="button" id="comment-btn" aria-label="comment-drawer">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                     <path
                         d="M5 8a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
@@ -168,7 +169,7 @@
                         d="M16 8c0 3.866-3.582 7-8 7a9.06 9.06 0 0 1-2.347-.306c-.584.296-1.925.864-4.181 1.234-.2.032-.352-.176-.273-.362.354-.836.674-1.95.77-2.966C.744 11.37 0 9.76 0 8c0-3.866 3.582-7 8-7s8 3.134 8 7zM5 8a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm4 0a1 1 0 1 0-2 0 1 1 0 0 0 2 0zm3 1a1 1 0 1 0 0-2 1 1 0 0 0 0 2z" />
                 </svg>
             </button>
-            <button type="button" id="share-btn">
+            <button type="button" id="share-btn" aria-label="share">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                     <path
                         d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z" />
@@ -179,7 +180,7 @@
                 <li><a id="share-to-whatsapp" data-action="share/whatsapp/share" target="_blank">WhatsApp</a></li>
                 <li><a id="share-to-twitter" target="_blank">Twitter</a></li>
             </ul>
-            <button type="button" id="report-btn">
+            <button type="button" id="report-btn" aria-label="report">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
                     <path
                         d="M8.982 1.566a1.13 1.13 0 0 0-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 5.995A.905.905 0 0 1 8 5zm.002 6a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
@@ -187,7 +188,7 @@
             </button>
             <div id="report-dialog" class="none">
                 <div>
-                    <h4>Report</h4>
+                    <div>Report</div>
                     <form id="report-form">
                         <label for="report-form-title">Title</label><input type="text" id="report-form-title">
                         <label for="report-form-description">Description</label><textarea id="report-form-description"></textarea>
@@ -199,13 +200,13 @@
         </div>
         <div id="comments-section" class="none">
             <form id="comment-form" class="comment-form">
-                <label for="comment-input">
+                <label for="comment-input" aria-label="comment-here">
                     <svg>
                         <use href="#comment-svg" width="20px" height="20px"></use>
                     </svg>
                 </label>
                 <textarea id="comment-input"></textarea>
-                <button>
+                <button aria-label="comment">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                         class="bi bi-forward-fill" viewBox="0 0 16 16">
                         <path
@@ -247,7 +248,7 @@
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="#">About</a></li>
+                    <li><a href="https://github.com/fitgang/random_blog">About</a></li>
                     <li><a href="https://fitgang.github.io/my-portfolio/">Developer</a></li>
                 </ul>
             </nav>

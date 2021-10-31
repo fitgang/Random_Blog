@@ -13,7 +13,6 @@
 
     // DOM elements and other imp data
     const article = JSON.parse(j),
-        authorName = `${article.author.name.first} ${article.author.name.last}`,
         date = document.getElementById("date"),
         title = document.getElementById("title"),
         image = document.getElementById("author-image"),
@@ -23,8 +22,8 @@
     date.innerText = article.date;
     title.innerText = article.title;
     image.src = article.author.picture.thumbnail;
-    image.alt = authorName;
-    name.innerText = authorName;
+    image.alt = "";
+    name.innerText = `${article.author.name.first} ${article.author.name.last}`;
     body.innerHTML = `<p>${article.body}</p>` + data;
 
     removePreloader();

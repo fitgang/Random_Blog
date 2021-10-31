@@ -55,14 +55,13 @@ function displayCards(arr) {
         container = document.querySelector("#article-cards");
     arr.forEach((a) => {
         let clone = tempCon.cloneNode(true).querySelector("article"),
-            nameObj = a.author.name,
-            name = `${nameObj.first} ${nameObj.last}`;
+            nameObj = a.author.name;
         clone.querySelector("p").textContent = a.body;
-        clone.querySelector("span").textContent = name;
+        clone.querySelector("span").textContent = `${nameObj.first} ${nameObj.last}`;
         clone.querySelector(".card-date").textContent = a.date;
         let img = clone.querySelector("img");
         img.src = a.author.picture.thumbnail;
-        img.alt = name;
+        img.alt = "";
         let link = clone.querySelector("a");
         link.textContent = a.title;
         link.id = a.id;
