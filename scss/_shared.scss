@@ -32,7 +32,6 @@ footer,
 
 header,
 footer,
-.button,
 #preloader {
     color: var(--color4);
 }
@@ -102,15 +101,20 @@ header ul,
     top: 2.5rem;
     box-shadow: 0px 2px 4px 0px #000000b3;
     background: #fff;
+    color: #000;
     width: 85%;
     padding: 5px;
     border-radius: 6px;
+    legend {
+        padding: 0px 10px;
+    }
     label {
         background: var(--color2);
         padding: 2px 10px;
-        margin: 5px;
+        margin: 8px;
         border-radius: 30px;
         display: inline-block;
+        font-size: 1.25em;
     }
     input[type="radio"] {
         appearance: none;

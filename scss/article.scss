@@ -43,7 +43,6 @@ h2 {
         margin: 1em auto auto auto;
         padding: 15px 20px;
         background: var(--color1);
-        color: #fff;
     }
     dt {
         font-weight: 500;
@@ -142,6 +141,10 @@ h2 {
         transform: translate(-50%, -50%);
         width: 90%;
         max-width: 500px;
+        &>div {
+            margin-block-end: 0.5 em;
+            font-weight: bold;
+        }
     }
     h4 {
         margin-bottom: 1em;
@@ -179,8 +182,8 @@ h2 {
             margin-left: 10px;
         }
         &:last-of-type {
-            background: var(--color3);
-            border-color: var(--color3);
+            background: var(--color2);
+            border-color: var(--color2);
             &:hover,
             &:focus-visible {
                 background: transparent;
