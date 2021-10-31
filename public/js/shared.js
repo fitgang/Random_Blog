@@ -42,18 +42,6 @@ function removePreloader() {
     }, 1000)
 }
 
-function setOGP(title, description, type, url, image) {
-    const propObj = ['title', 'description', 'type', 'url', 'image'],
-        l = propObj.length,
-        afterElem = document.getElementsByTagName("link")[0];
-    for (let i = 0; i < l; i++) {
-        let meta = document.createElement("meta");
-        meta.setAttribute("property", `og:${propObj[i]}`);
-        meta.content = arguments[i];
-        afterElem.insertAdjacentElement("beforebegin", meta);
-    }
-}
-
 // EVENT listeners
 accBtn.addEventListener("click", showAccount);
 accBtn.addEventListener("keypress", (e) => {

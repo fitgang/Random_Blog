@@ -38,14 +38,6 @@
     fb.href = encodeURI(`https://www.facebook.com/sharer/sharer.php?u=${link}`);
     wa.href = encodeURI(`https://api.whatsapp.com/send?text=${link}`);
     tweet.href = encodeURI(`https://twitter.com/intent/tweet?text=Hey! Check out this article here&url=${link}`);
-
-    // collects data and sets OGP
-    const ogTitle = article.title,
-        ogDes = body.innerText.slice(0, 20),
-        ogType = 'article',
-        ogURL = location,
-        ogImage = location.origin + '/images/logo.png';
-    setOGP(ogTitle, ogDes, ogType, ogURL, ogImage);
 })();
 
 // DOM elements

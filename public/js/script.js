@@ -49,16 +49,6 @@ let articles = createArticleList([]);
     }
 })();
 
-// collect data and sets OGP
-(function() {
-    const title = document.querySelector("h1").innerText.toUpperCase(),
-        des = 'dummy website which generates random articles',
-        type = 'website',
-        url = location,
-        image = location.origin + '/images/logo.png';
-    setOGP(title, des, type, url, image);
-})();
-
 // renders article cards
 function displayCards(arr) {
     const tempCon = document.getElementsByTagName("template")[0].content,
