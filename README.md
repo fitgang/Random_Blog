@@ -30,4 +30,6 @@ It has a search functionality, both on the home page and on the article page, to
 
 Uses can like and share the article, even comment on it.
 Again [JSONPLACEHOLDER](https://jsonplaceholder.typicode.com/) is used for dummy comments.
-> Check it out here - [random blog](https://random-blog01.herokuapp.com/)
+
+---
+ Check it out here - [random blog](https://random-blog01.herokuapp.com/)
