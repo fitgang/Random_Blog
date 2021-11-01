@@ -1,9 +1,15 @@
-# Random_Blog
+# Random Blog
 ## What is this project?
 A dummy blog website which shows different articles.
 
 - Mobile-first design
+
+<img src="img for github/mobile-first.png" alt="iphone image"><img src="img for github/responsive1.png" alt="responsive1">
+
 - Responsive to different screens sizes
+
+<img src="img for github/responsive2.png" alt="responsive2">
+
 - Cross browser compatibility
 - fully accessible through a keyboard
 - deployed on HEROKU
@@ -18,9 +24,10 @@ Javascript makes this interactive with several buttons and a search bar.
 
 This is a node express app.
 
-This website uses JSONPLACEHOLDER open source api for dummy articles and RANDOMUSER for dummy identities.
+This website uses [JSONPLACEHOLDER](https://jsonplaceholder.typicode.com/) open source api for dummy articles and [RANDOMUSER](https://randomuser.me/) for dummy identities.
 
 It has a search functionality, both on the home page and on the article page, to search for different articles or content respectively.
 
 Uses can like and share the article, even comment on it.
-Again JSONPLACEHOLDER is used for dummy comments.
+Again [JSONPLACEHOLDER](https://jsonplaceholder.typicode.com/) is used for dummy comments.
+> Check it out here - [random blog](https://random-blog01.herokuapp.com/)
